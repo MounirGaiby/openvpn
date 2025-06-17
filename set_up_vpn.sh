@@ -30,7 +30,6 @@ fi
 
 # Update and install necessary packages
 echo "Updating package list and installing OpenVPN..."
-apt update || { echo "Failed to update package list"; exit 1; }
 apt install openvpn -y || { echo "Failed to install OpenVPN"; exit 1; }
 
 # mv config file to the OpenVPN directory

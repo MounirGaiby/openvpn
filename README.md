@@ -16,17 +16,19 @@ This script (`set_up_vpn.sh`) automates the process of:
 - **Root privileges**: The script must be run with `sudo` or as root
 - **Linux system** with systemd (Ubuntu, Debian, CentOS, etc.)
 - **VPN configuration file** (`.conf` format)
-- **Password file** containing your VPN credentials
+- **Password file** containing your VPN 
 
 ## Usage
 
 ```bash
+sudo apt update
 sudo ./set_up_vpn.sh <vpn_config_file_path> <vpn_password_file_path>
 ```
 
 ### Example
 
 ```bash
+sudo apt update
 sudo ./set_up_vpn.sh /path/to/your/vpn_config.conf /path/to/your/password.txt
 ```
 
