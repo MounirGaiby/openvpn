@@ -8,7 +8,7 @@ VPN_CONFIG_LOCATION="/etc/openvpn/client"
 # Required Variables
 if [ -z "$1" ] || [ -z "$2" ]; then
   echo "Usage: $0 <vpn_config_file_path> <vpn_pw_file_path>"
-  echo "Example: $0 /path/to/my_vpn.ovpn /path/to/my_vpn_password.txt"
+  echo "Example: $0 /path/to/my_vpn.conf /path/to/my_vpn_password.txt"
   exit 1
 fi
 

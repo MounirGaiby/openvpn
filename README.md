@@ -15,7 +15,7 @@ This script (`set_up_vpn.sh`) automates the process of:
 
 - **Root privileges**: The script must be run with `sudo` or as root
 - **Linux system** with systemd (Ubuntu, Debian, CentOS, etc.)
-- **VPN configuration file** (`.ovpn` format)
+- **VPN configuration file** (`.conf` format)
 - **Password file** containing your VPN credentials
 
 ## Usage
@@ -27,7 +27,7 @@ sudo ./set_up_vpn.sh <vpn_config_file_path> <vpn_password_file_path>
 ### Example
 
 ```bash
-sudo ./set_up_vpn.sh /path/to/your/vpn_config.ovpn /path/to/your/password.txt
+sudo ./set_up_vpn.sh /path/to/your/vpn_config.conf /path/to/your/password.txt
 ```
 
 ## Password File Format
@@ -46,9 +46,9 @@ your_password
 
 ## Important: OpenVPN Configuration Setup
 
-**Your `.ovpn` file must be configured to use the password file!**
+**Your `.conf` file must be configured to use the password file!**
 
-In your OpenVPN configuration file (`.ovpn`), you need to add or modify the `auth-user-pass` line to reference your password file:
+In your OpenVPN configuration file (`.conf`), you need to add or modify the `auth-user-pass` line to reference your password file:
 
 ```
 auth-user-pass password_filename.txt
@@ -58,8 +58,8 @@ auth-user-pass password_filename.txt
 
 ### Example:
 - If your password file is named `my_vpn_credentials.txt`
-- Your `.ovpn` file must contain: `auth-user-pass my_vpn_credentials.txt`
-- Run the script: `sudo ./set_up_vpn.sh config.ovpn my_vpn_credentials.txt`
+- Your `.conf` file must contain: `auth-user-pass my_vpn_credentials.txt`
+- Run the script: `sudo ./set_up_vpn.sh config.conf my_vpn_credentials.txt`
 
 **Without this setup, the VPN connection will fail to authenticate!**
 
